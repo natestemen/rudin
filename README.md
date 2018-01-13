@@ -16,3 +16,11 @@ the way.
 We would love help with this project from anyone, especially from those who have
 once struggled through Rudin themselves. Also pointing us towards your favorite
 analysis book or even favorite math book would be super handy.
+
+## Build
+
+To get set up I've just been running
+```bash
+latexmk -c main
+```
+in the content directory.
