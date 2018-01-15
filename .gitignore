@@ -5,3 +5,5 @@
 *.fls
 *.log
 *.out
+*.tdo
+*.toc
