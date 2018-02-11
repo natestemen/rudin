@@ -1,2 +1,28 @@
 
-\input{content/01-number-systems/introduction}
+\newcommand{\pathtoroot}{content/01-number-systems}
+\let\oldinput\input
+\renewcommand{\input}[1]{\oldinput{\pathtoroot/#1}}
+
+\section{Introduction}\label{sec:intro}
+\input{introduction}
+
+\section{Ordered Sets}\label{sec:ord-sets}
+\input{ordered-sets}
+
+\section{Fields}\label{sec:fields}
+\input{fields}
+
+\section{The Real Field}\label{sec:real-field}
+\input{real-field}
+
+\section{The Extended Real Number System}\label{sec:extended-reals}
+\input{extended-real-number-system}
+
+\section{The Complex Field}\label{sec:complex-field}
+\input{complex-field}
+
+\section{Euclidean Spaces}\label{sec:euclideans-space}
+\input{euclidean-spaces}
+
+\section{Appendix}\label{sec:appendix}
+\input{appendix}
