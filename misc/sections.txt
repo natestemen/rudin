@@ -1,4 +1,3 @@
-
 Introduction
 Ordered Sets
 Fields
@@ -7,13 +6,13 @@ The Extended Real Number System
 The Complex Field
 Euclidean Spaces
 Appendix
-
+-----
 Finite, Countable, and Uncountable Sets
 Metric Spaces
 Compact Sets
 Perfect Sets
 Connected Sets
-
+-----
 Convergent Sequences
 Subsequences
 Cauchy Sequences
@@ -28,7 +27,7 @@ Summations by Parts
 Absolute Convergence
 Addition and Multiplication of Series
 Rearrangements
-
+-----
 Limits of Functions
 Continuous Functions
 Continuity and Compactness
@@ -36,7 +35,7 @@ Continuity and Connectedness
 Discontinuities
 Monotonic Functions
 Infinite Limits and Limits at Infinity
-
+-----
 The Derivative of a Real Function
 Mean Value Theorem
 The Continuity of Derivatives
@@ -44,13 +43,13 @@ L'Hospital's Rule
 Derivatives of Higher Order
 Taylor's Theorem
 Differentiation of Vector-valued Functions
-
+-----
 Definition and Existence of the Integral
 Properties of the Integral
 Integration and Differentiation
 Integration of Vector-valued Functions
 Rectifiable Curves
-
+-----
 Discussion of Main Problem
 Uniform Convergence
 Uniform Convergence and Continuity
@@ -58,14 +57,14 @@ Uniform Convergence and Integration
 Uniform Convergence and Differentiation
 Equicontinuous Families of Functions
 The Stone-Weierstrass Theorem
-
+-----
 Power Series
 The Exponentiation and Logarithmic Functions
 The Trigonometric Functions
 The Algebraic Completeness of the Complex Field
 Fourier Series
 The Gamma Function
-
+-----
 Linear Transformations
 Differentiation
 The Contraction Principle
@@ -75,7 +74,7 @@ The Rank Theorem
 Determinants
 Derivatives of Higher Order
 Differentiation of Integrals
-
+-----
 Integration
 Primitive Mappings
 Partitions of Unity
@@ -85,7 +84,7 @@ Simplexes and Chains
 Stokes' Theorem
 Closed Forms and Exact Forms
 Vector Analysis
-
+-----
 Set Functions
 Constructions of the Lebesgue Measure
 Measure Spaces
