@@ -1,8 +1,8 @@
 import os
+import pprint
 
 chapter_names = []
 chapter_dir_names = []
-chapter_numbers = []
 
 with open('chapters.txt') as f:
     for i, chapter in enumerate(f):
@@ -48,13 +48,51 @@ for i in range(len(longest)):
     else:
         section_numbers.append(str(i))
 
-for chapter, sections in zip(chapter_dir_names, section_file_names):
-    for number, section in zip(section_numbers[:len(sections)], sections):
-        path = os.path.join('../content', chapter, number + '-' + section + '.tex')
-        with open(path, 'w+') as f:
+input_template = '''
+\\section{{{section}}}\\label{{{label}}}
+\\input{{{filename}}}'''
+
+for i, (chapter, secs) in enumerate(zip(chapter_dir_names, section_file_names)):
+    names = sections[i]
+    macros = '''\\newcommand{{\\pathtoroot}}{{{root}}}
+\\let\\oldinput\\input
+\\renewcommand{{\\input}}[1]{{\\oldinput{{\\pathtoroot/#1}}}}\n'''.format(
+        root=os.path.join('content', chapter)
+    )
+    inputs = ''
+    for number, section, name in zip(section_numbers[:len(secs)], secs, names):
+        path = os.path.join('content', chapter, number + '-' + section)
+        with open('../' + path + '.tex', 'w+') as f:
             f.write('filler content...')
+
+        inputs += input_template.format(
+            section=name,
+            label=':'.join(['sec', section]),
+            dir=chapter,
+            filename='-'.join([number, section])
+        )
+        inputs += '\n'
     
+    main = os.path.join('../content', chapter, 'main.tex')
+    with open(main, 'w+') as f:
+        f.truncate()
+        f.write(inputs)    
 
+chap_template = '''
+\\chapter{{{chapname}}}\\label{{{label}}}
+\\subimport{{{dir}}}{{{filename}}}\n'''
 
-import pprint
+content = ''
+
+for name, dirname in zip(chapter_names, chapter_dir_names):
+    content += chap_template.format(
+        chapname=name,
+        label=':'.join(['chap', dirname]),
+        dir=dirname + os.sep,
+        filename='main'
+    )
+
+with open('../content/content.tex', 'w+') as f:
+    f.truncate()
+    f.write(content)
 
