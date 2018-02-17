@@ -8,3 +8,5 @@
 *.tdo
 *.toc
 *.dvi
+*.xml
+*.bcf
