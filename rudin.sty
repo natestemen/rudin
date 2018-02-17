@@ -7,43 +7,14 @@
 \RequirePackage{amsthm}
 \RequirePackage[most]{tcolorbox}
 \RequirePackage{xparse}
-\RequirePackage{hyperref}
 \RequirePackage{import}
 \RequirePackage{mathrsfs}
-%\RequirePackage{fontspec}
+\RequirePackage{tikz}
 
+\RequirePackage{hyperref}
+\hypersetup{colorlinks}
 
 \theoremstyle{definition}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{definition}{Definition}[section]
 \newtheorem{example}{Example}[chapter]
-
-%\newcounter{example}
-%\renewdocumentenvironment{example}{ O{} }
-%{
-%\colorlet{colexam}{orange!55!black} % Global example color
-%\newtcolorbox[use counter=example]{examplebox}{%
-%    % example frame start
-%    empty,% empty previously set parameters
-%    title={example: #1},% use \thetcbcounter to access the testexample counter text
-%    % attaching a box requires an overlay
-%    attach boxed title to top left,
-%       % ensures proper line breaking in longer titles
-%       minipage boxed title,
-%    % (boxed title style requires an overlay)
-%    boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
-%    coltitle=colexam,fonttitle=\bfseries,
-%    before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=3mm,right=0mm,top=2pt,breakable,pad at break=0mm,
-%       before upper=\csname @totalleftmargin\endcsname0pt, % Use instead of parbox=true. This ensures parskip is inherited by box.
-%    % handles box when it exists on one page only
-%    overlay unbroken={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
-%    % handles multipage box: first page
-%    overlay first={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
-%    % handles multipage box: middle page
-%    overlay middle={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
-%    % handles multipage box: last page
-%    overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },%
-%    }
-%\begin{examplebox}}
-%{\end{examplebox}\endlist}    
-    
