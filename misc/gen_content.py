@@ -1,4 +1,5 @@
 import os
+import copy
 import pprint
 
 chapter_names = []
@@ -48,49 +49,60 @@ for i in range(len(longest)):
     else:
         section_numbers.append(str(i))
 
-input_template = '''
-\\section{{{section}}}\\label{{{label}}}
-\\input{{{filename}}}'''
+input_template = '''\\input{{{filename}}}'''
+
+chapter_head = '''\\chapter{{{chapter}}}\\label{{chap:{label}}}'''
+
+chapter_template = [
+    '''\\documentclass[../../templates/chapter]{subfiles}''',
+    '''\\begin{document}'''
+]
+
+section_template = '''\\documentclass[../../templates/section]{{subfiles}}
+
+\\begin{{document}}
+
+\\section{{{section}}}\label{{sec:{label}}}
+
+filler content...
+
+\\end{{document}}
+'''
 
 for i, (chapter, secs) in enumerate(zip(chapter_dir_names, section_file_names)):
     names = sections[i]
-    macros = '''\\newcommand{{\\pathtoroot}}{{{root}}}
-\\let\\oldinput\\input
-\\renewcommand{{\\input}}[1]{{\\oldinput{{\\pathtoroot/#1}}}}\n'''.format(
-        root=os.path.join('content', chapter)
-    )
-    inputs = ''
-    for number, section, name in zip(section_numbers[:len(secs)], secs, names):
-        path = os.path.join('content', chapter, number + '-' + section)
-        with open('../' + path + '.tex', 'w+') as f:
-            f.write('filler content...')
-
-        inputs += input_template.format(
-            section=name,
-            label=':'.join(['sec', section]),
-            dir=chapter,
-            filename='-'.join([number, section])
+    chapter_name = chapter_names[i]
+    inputs = copy.deepcopy(chapter_template)
+    inputs.append(chapter_head.format(
+        chapter=chapter_name,
+        label=chapter
         )
-        inputs += '\n'
-    
+    )
+    for number, section, name in zip(section_numbers, secs, names):
+        numbered = '-'.join([number, section])
+        path = os.path.join('content', chapter, numbered)
+        contents = section_template.format(section=name, label=section)
+        with open('../' + path + '.tex', 'w+') as f:
+            f.write(contents)
+
+        inputs.append(input_template.format(filename=numbered))
+    inputs.append('''\\end{document}''')
+
     main = os.path.join('../content', chapter, 'main.tex')
     with open(main, 'w+') as f:
         f.truncate()
-        f.write(inputs)    
+        f.write('\n\n'.join(inputs))
 
-chap_template = '''
-\\chapter{{{chapname}}}\\label{{{label}}}
-\\subimport{{{dir}}}{{{filename}}}\n'''
+chap_template = '''\\subimport{{{dir}}}{{{filename}}}'''
 
 content = ''
 
 for name, dirname in zip(chapter_names, chapter_dir_names):
     content += chap_template.format(
-        chapname=name,
-        label=':'.join(['chap', dirname]),
         dir=dirname + os.sep,
         filename='main'
     )
+    content += '\n\n'
 
 with open('../content/content.tex', 'w+') as f:
     f.truncate()
