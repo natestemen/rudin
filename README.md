@@ -1,8 +1,8 @@
 # Rudin Translation
 
-This project will be to translate the mother of all analysis books, to a more
+This project will be to translate the mother of all analysis books to a more
 user friendly version that is more approachable. In particular the goals of
-this project are to use Walter Rudin's treasured class _Principles of
+this project are to use Walter Rudin's treasured classic _Principles of
 Mathematical Analysis_ to create a more motivated, and sound introduction to
 analysis for those who do not have the mathematical maturity that Rudin expects.
 
@@ -19,8 +19,16 @@ analysis book or even favorite math book would be super handy.
 
 ## Build
 
-To get set up I've just been running
-```bash
-latexmk -c main
+To build the full pdf of the book, run the following command in the root of the
+project.
 ```
-in the content directory.
+latexmk -pdf main
+```
+The project is also set up with the
+[`subfiles`](https://ctan.org/pkg/subfiles?lang=en) package so that each
+section, or each chapter can be compiled on its own so as the project grows,
+your compiles dont have to. To compile a single chapter or section you can run
+`latexmk` or just `pdflatex` on the main file or the section file respectively.
+That said `latexmk` seems to be giving a few errors which would be great to
+work out, but I haven't seem to find whats going wrong yet (and besides, it's
+compiling as of now).
