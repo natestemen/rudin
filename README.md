@@ -1,34 +1,75 @@
-# Rudin Translation
+# Rudin: Translated
 
-This project will be to translate the mother of all analysis books to a more
-user friendly version that is more approachable. In particular the goals of
-this project are to use Walter Rudin's treasured classic _Principles of
-Mathematical Analysis_ to create a more motivated, and sound introduction to
-analysis for those who do not have the mathematical maturity that Rudin expects.
+Walter Rudin's [_Principles of Mathematical
+Analysis_](https://www.mheducation.com/highered/product/principles-mathematical-analysis-rudin/M007054235X.html)
+is a tried and true textbook for learning analysis, but as anyone has ever read
+it can say, it is very terse. This leaves many readers struggling through
+clever arguments and stumbling through manipulations. With this project we aim
+to take Rudin's great organization of the subjects material, but present it in
+a way that more can appreciate. With more intuitive explanations, graphics, and
+anything else we can that aids in learning a notoriously hard subject like
+analysis.
 
-Pre-requisites are lame, but if we **had** to say, we would say having taken
-multi-variable calculues, and some linear algebra would be helpful, but by no
-means absolutely necessary. Familiarity with basic proof methods---such as
-proof by contradiction/contrapositive/induction and direct proofs--- will be
-helpful, but again we will do our best to provide necessary information along
-the way.
+## Getting Started
 
-We would love help with this project from anyone, especially from those who have
-once struggled through Rudin themselves. Also pointing us towards your favorite
-analysis book or even favorite math book would be super handy.
-
-## Build
-
-To build the full pdf of the book, run the following command in the root of the
-project.
+To get the project you must first have [`git`](https://git-scm.com/). You can
+then clone the project via
 ```
-latexmk -pdf main
+git clone https://github.com/natestemen/rudin.git
 ```
-The project is also set up with the
-[`subfiles`](https://ctan.org/pkg/subfiles?lang=en) package so that each
-section, or each chapter can be compiled on its own so as the project grows,
-your compiles dont have to. To compile a single chapter or section you can run
-`latexmk` or just `pdflatex` on the main file or the section file respectively.
-That said `latexmk` seems to be giving a few errors which would be great to
-work out, but I haven't seem to find whats going wrong yet (and besides, it's
-compiling as of now).
+with HTTPS or
+```
+git clone git@github.com:natestemen/rudin.git
+```
+to use SSH.
+
+To build the full pdf, run
+```
+latexmk -pdf main.tex
+```
+in the root directory of the project. See [below](# Prerequisites) if you do
+not have the `latexmk` command or a LaTeX distribution.
+
+### Prerequisites
+
+First and foremost, you will need a LaTeX distribution which can be found for
+your OS [here](https://www.latex-project.org/get/#tex-distributions). With that
+installed you _should_ have the `latexmk` command (which is similar to
+`pdflatex`, but smarter) which I would recommend using to compile the pdf's
+just so you don't have to worry about running `pdflatex` multiple times.
+
+Make sure when you use `latexmk` you pass it the `-pdf` option, otherwise you
+will be left searching for a pdf (as I was).
+
+## Deployment
+
+It would be cool to get it so that when new commits appear in master, the
+newest pdf if rendered on some website. If anyone knows how to do this, perhaps
+we could try. I'll look into it. Probably something we could do with
+[Overleaf](https://www.overleaf.com/).
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://github.com/natestemen/rudin/blob/master/CONTRIBUTING.md)
+for details on our code of conduct, and the process for submitting pull
+requests.
+
+## Authors
+
+* **Nate Stemen** - *Initial work* 
+* **Kevin Yeh** - *Initial work*
+
+See also the list of
+[contributors](https://github.com/natestemen/rudin/blob/master/AUTHORS) who
+participated in this project.  
+
+## License
+
+This project is licensed under the WTFPL License - see the
+[LICENSE.md](https://github.com/natestemen/rudin/blob/master/LICENSE) file for details
+
+## Acknowledgments
+
+* Walter Rudin
+* Mom and Dad
+* epsilon
