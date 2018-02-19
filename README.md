@@ -27,7 +27,7 @@ To build the full pdf, run
 ```
 latexmk -pdf main.tex
 ```
-in the root directory of the project. See [below](# Prerequisites) if you do
+in the root directory of the project. See [below](#prerequisites) if you do
 not have the `latexmk` command or a LaTeX distribution.
 
 ### Prerequisites
