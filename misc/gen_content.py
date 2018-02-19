@@ -49,7 +49,7 @@ for i in range(len(longest)):
     else:
         section_numbers.append(str(i))
 
-input_template = '''\\input{{{filename}}}'''
+input_template = '''\\subfile{{{filename}}}'''
 
 chapter_head = '''\\chapter{{{chapter}}}\\label{{chap:{label}}}'''
 
@@ -85,7 +85,7 @@ for i, (chapter, secs) in enumerate(zip(chapter_dir_names, section_file_names)):
         with open('../' + path + '.tex', 'w+') as f:
             f.write(contents)
 
-        inputs.append(input_template.format(filename=numbered))
+        inputs.append(input_template.format(filename=path))
     inputs.append('''\\end{document}''')
 
     main = os.path.join('../content', chapter, 'main.tex')
@@ -93,15 +93,12 @@ for i, (chapter, secs) in enumerate(zip(chapter_dir_names, section_file_names)):
         f.truncate()
         f.write('\n\n'.join(inputs))
 
-chap_template = '''\\subimport{{{dir}}}{{{filename}}}'''
+chap_template = '''\\subfile{{{filename}}}'''
 
 content = ''
 
 for name, dirname in zip(chapter_names, chapter_dir_names):
-    content += chap_template.format(
-        dir=dirname + os.sep,
-        filename='main'
-    )
+    content += chap_template.format(filename=os.path.join('content', dirname, 'main'))
     content += '\n\n'
 
 with open('../content/content.tex', 'w+') as f:

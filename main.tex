@@ -1,7 +1,10 @@
-\documentclass{memoir}
+\documentclass{tufte-book}
 
 \usepackage{rudin}
 \usepackage[colorinlistoftodos]{todonotes}
+
+\setcounter{tocdepth}{5}
+\setcounter{chapter}{1}
 
 \title{Rudin: Translated}
 
@@ -9,17 +12,14 @@
 
 \begin{document}
 
-
 \frontmatter
 \maketitle
-
 \tableofcontents
-\setcounter{tocdepth}{10}
-
 \listoftodos
 
 \mainmatter
-\import*{content/}{content}
+\subfile{content/content}
 
 \printbibliography
+
 \end{document}
