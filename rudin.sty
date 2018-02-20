@@ -2,25 +2,9 @@
 
 \ProvidesPackage{rudin}[2018/01/14 package rudin]
 
-\RequirePackage[utf8]{inputenc}
-\RequirePackage[english]{babel}
-\RequirePackage[english=american]{csquotes}
-\RequirePackage{microtype}
-\RequirePackage{amsmath}
-\RequirePackage{amsthm}
-\RequirePackage[most]{tcolorbox}
-\RequirePackage{xparse}
-\RequirePackage{mathrsfs}
-\RequirePackage{tikz}
-\RequirePackage{subfiles}
+\input{sty/packages}
 
-\RequirePackage[backend=biber]{biblatex}
-\addbibresource{bib/references.bib}
-
-\RequirePackage{hyperref}
-\hypersetup{colorlinks}
-
-\RequirePackage{cleveref}
+\input{sty/macros}
 
 \theoremstyle{definition}
 \newtheorem{theorem}{Theorem}[section]
