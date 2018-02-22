@@ -34,10 +34,10 @@ do "hit" all of $B$, then we call such a function a surjection (or and onto fu
 nction). 
 
 \begin{definition}
-A mapping $f:A\rightarrow B$ is said to be a surjection, or a surjective mapping
-
-, if for all $y \in B$, there exists an element $x\in A$, such that $f(x)=y$.
-\end{deiniftion}
+A mapping $f:A\rightarrow B$ is said to be a surjection, or a surjective
+mapping, if for all $y\in B$, there exists an element $x\in A$, such that
+$f(x) = y$.
+\end{definition}
 
 Sometimes, we are interested in talking about the values of a subset of the dom
 ain under the mapping. For example, we may only wish to observe the birthdays 
@@ -50,22 +50,23 @@ a surjective mapping as one where $f(A) = B$ (a non-seurjective mapping would
 only satisfy $f(A) \subset B$.
 
 On the other hand, we can fix some subset of the range $B$, and consider the 
-elements in $A$ that "hit" $B$. To make it precise, if $G \subset B$, then we denote 
-$f^{-1}(E)$, the inverse image of $G$, as the set of all $x \in A$, such that $f(x) 
-\in G$. It is entirely possible that multiple people may have the same 
- birthday, so given an element $y \in B$, the set $f^{-1}(y)$, that is all 
-$x \in A$ that map to $y$ may have multiple elements. However, it is not possibl
-e for a person to have multiple birthdays; in the same way, for any $x \in A$, 
-$f(x)$ is a single value. This is inherent in the definition of a function.
+elements in $A$ that "hit" $B$. To make it precise, if $G \subset B$, then we
+denote $f^{-1}(E)$, the inverse image of $G$, as the set of all $x\in A$, such
+that $f(x)\in G$. It is entirely possible that multiple people may have the
+same birthday, so given an element $y\in B$, the set $f^{-1}(y)$, that is all 
+$x\in A$ that map to $y$ may have multiple elements. However, it is not
+possible for a person to have multiple birthdays; in the same way, for any
+$x\in A$, $f(x)$ is a single value. This is inherent in the definition of a
+function.
 
 In the special case that we do not have more than one element of the domain 
- mapping to the same element of the range, i.e. we have no-one sharing the same
- birthday, then we call this function an injection.
+mapping to the same element of the range, i.e. we have no-one sharing the same
+birthday, then we call this function an injection.
 
 \begin{definition}
-A mapping $f:A\rightarrow B$ is said to be an injection, or an injective mapping
- , if for all $x_1,x_2 \in A$, whenever it is the case that $x_1\neq x_2$, we have
-$f(x_1) \neq f(x_2).
+A mapping $f:A\rightarrow B$ is said to be an injection, or an injective
+mapping, if for all $x_1, x_2 \in A$, whenever it is the case that
+$x_1\neq x_2$, we have $f(x_1) \neq f(x_2)$.
 \end{definition}
 
 The definition says that, whenever we have distinct $x$'s in the domain, this must
@@ -99,7 +100,7 @@ al number, if they have the same number of elements.
 
 \begin{definition}
 If there exists a bijective mapping between sets $A$ and $B$, we say they are 
-equivalent. And we write $A~B$.
+equivalent. And we write $A\sim B$.
 \end{definition}
 
 Thus, we have a particular way of comparing two sets. If we are given two sets, 
@@ -126,7 +127,7 @@ tion is precisely a bijective mapping between $A$, and the counting numbers, or
 Natural Numbers, which are $1,2,3,4,5,6,7,...$. And when we say set $A$ has 
 cardinality $n$, we mean precisely the following:
 \[
-A~\{1,2,3,4,5,...,n\}
+A\sim\{1,2,3,4,5,...,n\}
 \]
 The existence of such an $n$, that is to say, our counting terminates, is exactly 
 the definition of a set being finite. While the absence of such an $n$ is exactly 
@@ -141,53 +142,51 @@ $\{1,2,...,n\}$ but also cannot form a bijection with the set $\{1,2,3,,4...\}$.
 inced you that the rational numbers is not a "big" enough number system)
 
 \begin{definition}
-For simplicity, we write the set $\{1,2,3,....,n$ as $J_n$, and the set 
-$\{1,2,3,4,...\}$ as $\mathbb{N}$. Then for any set $A$, we say
-\subsubsection*{(a)}
-$A$ is finite if $A~J_n$ for some $n$ (the empty set is also considered to be 
+For simplicity, we write the set $\{1, 2, 3,\ldots, n\}$ as $J_n$\todo{i really
+dont like this notation. I would prefer $\overline{n}$ or something else}, and
+the set $\{1,2,3,4,...\}$ as $\N$. Then for any set $A$, we say
+\begin{itemize}
+    \item $A$ is finite if $A\sim J_n$ for some $n$ (the empty set is also considered to be 
 finite, even though technically it has zero elements).
-\subsubsection*{(b)}
-$A$ is infinite if $A$ is not finite.
-\subsubsection*{(c)}
-$A$ is countable if $A~J$
-\subsubsection*{(d)}
-$A$ is uncountable if $A$ is neither finite nor countable.
-\subsubsection*{(e)}
-$A$ is at most countable if $A$ is finite or countable.
+    \item $A$ is infinite if $A$ is not finite.
+    \item $A$ is countable if $A\sim J$
+    \item $A$ is uncountable if $A$ is neither finite nor countable.
+    \item $A$ is at most countable if $A$ is finite or countable.
+\end{itemize}
 \end{definition}
 
 Now for some examples. In particular, we will show the (possibly) surprising result 
 that sets of all integers, the set of only positive integers (which is just 
-$\mathbb{N}$), the set of even integers, and the set of odd integers all have the 
+$\N$), the set of even integers, and the set of odd integers all have the 
 same cardinality, the countably infinite kind. 
 That is to say, they all have the same number of numbers in them. 
 We will do this by explicitly defining bejective mappings between each set to 
-$\mathbb{N}$.
+$\N$.
 
 \begin{example}
-$\mathbb{Z}=\{...,-3,-2,-1,0,1,2,3,...\}$ is the set of all integers. $\mathbb{Z}$ is
-countable, i.e. $\mathbb{Z}~\mathbb{N}$. The bijection 
-$f:\mathbb{N} \rightarrow \mathbb{Z}$ is given by the following
+$\Z=\{...,-3,-2,-1,0,1,2,3,...\}$ is the set of all integers. $\Z$ is
+countable, i.e. $\Z \sim \N$. The bijection 
+$f:\N \rightarrow \Z$ is given by the following
 \[ 
-f(n)=
+f(n) =
 \begin{cases} 
-      \frac{n}{2} & \text{if} \quad n \quad \text{is even} \\
-      -\frac{n-1}{2} & \text{if} \quad n \quad \text{is odd}
-   \end{cases}
+    \frac{n}{2}      & \text{if} \quad n \quad \text{is even} \\
+    -\frac{n - 1}{2} & \text{if} \quad n \quad \text{is odd}
+\end{cases}
 \]
-We can check that this is indeed a bijection between $\mathbb{N}$ and $\mathbb{Z}$.
+We can check that this is indeed a bijection between $\N$ and $\Z$.
 To do so we show that it is both a surjection and an injection. First, for any natural 
-number $y\in \mathbb{Z}$, if $y$ is positive, then we can find the the integer $x=2y$ 
+number $y\in \Z$, if $y$ is positive, then we can find the the integer $x = 2y$ 
 which is an even natural number, thus under the mapping, 
 \[
-f(x)=f(2y)=\frac{2y}{2}=y
+f(x) = f(2y) = \frac{2y}{2} = y
 \] 
 If $x$ is not positive (so is 0 or is negative), then we can find the integer 
-$y=-2y+1$, which is an odd natural number, therefore under the mapping,
+$y = -2y + 1$, which is an odd natural number, therefore under the mapping,
 \[
-f(x)=f(-2y+1)=-\frac{-2y+1-1}{2}=-\frac{2y}{2}=y
+f(x) = f(-2y + 1) = -\frac{-2y + 1 - 1}{2} = -\frac{2y}{2} = y
 \]
-So any integer $y$ in $\mathbb{Z}$, we have found a natural number in $\mathbb{N}$ 
+So any integer $y$ in $\Z$, we have found a natural number in $\N$ 
 that is mapped by $f$ to $y$, therefore $f$ is surjective.
 
 Now for injectivity. Suppose we take two disitinct natural numbers, $x_1$ and $x_2$, 
@@ -195,13 +194,13 @@ $x_1\neq x_2$. If they have different parities, then the mapping $f$ maps them t
 different signs, therefore $f(x_1)\neq f(x_2)$. If they are both even, then since 
 $x_1\neq x_2$, we must have $f(x_1)=\frac{x_1}{2}\neq \frac{x_2}{2}=f(x_2)$. If $x_1$
  and $x_2$ are both odd, then similarly we have 
-$f(x_1)=-\frac{x_1-1}{2}\neq -\frac{x_2-1}{2}=f(x_2)$. Therefore we have established 
+$f(x_1) = -\frac{x_1-1}{2}\neq -\frac{x_2-1}{2}=f(x_2)$. Therefore we have established 
 that $f$ is an injection. Since we showed both surjectivity and injectivity, $f$ is 
-a bijection. Therefore, by our definition of cardinality, $mathbb{N}$ and $\mathbb{Z}$ 
+a bijection. Therefore, by our definition of cardinality, $mathbb{N}$ and $\Z$ 
 have the same cardinality, i.e. they have the same number of elements.
 
 The cases for finding a bijection between $mathbb{N}$ and the set of even integers, 
-and between $\mathbb{N}$ and odd integers, are left as excercises for you. The gener
+and between $\N$ and odd integers, are left as excercises for you. The gener
 al appraoch is the same as the case shown just now.
 \end{example} 
 
@@ -210,8 +209,8 @@ Recall that a proper subset of a set $A$ is a subset of $A$ that is not the whol
 It is not possible for a proper subset of a finite set to be equivalent (same cardinal
 ity) to the set itself. This is intuitively apparent, a subset that is not equal to the 
 original set must have less elements. However, if the original set is an infinite set, 
-then this is possible. As we have just shown, $\mathbb{N}~\mathbb{Z}$, but $\mathbb{N}$ 
-is a proper subset of $\mathbb{Z}$. 
+then this is possible. As we have just shown, $\N\sim\Z$, but $\N$ 
+is a proper subset of $\Z$. 
 \end{remark}
 
 
