@@ -2,8 +2,7 @@
 
 \begin{document}
 
-\section{Finite, Countable, and Uncountable Sets}
-\label{sec:finite-countable-and-uncountable-sets}
+\section{Finite, Countable, and Uncountable Sets}\label{sec:finite-countable-and-uncountable-sets}
 Armed with a well-constructed real number system, we can begin to talk about
 some mathematical constructions.  One of the simplest constructions
 (operations?) on the real numbers is the object called a function.  A function
@@ -24,7 +23,7 @@ the set of all possible dates the range of the function, and we say the
 function maps from the domain to the range. If we denote $f$ as the funciton,
 the domain as the set $A$, the range as the set $B$, then we represent this as
 \[
-f:A\rightarrow B
+f:A\to B
 \]
 Now one might notice that in a typical classroom, it is unlikely that we will
 have all the possivle dates in a year represented among all the students,
@@ -34,7 +33,7 @@ the case we do ``hit'' all of $B$, then we call such a function a surjection
 (or and onto function). 
 
 \begin{definition}
-A mapping $f:A\rightarrow B$ is said to be a surjection, or a surjective
+A mapping $f:A\to B$ is said to be a surjection, or a surjective
 mapping, if for all $y\in B$, there exists an element $x\in A$, such that
 $f(x) = y$.
 \end{definition}
@@ -46,7 +45,7 @@ subset of $A$, then we say $f(E)$ is the image of $E$ under $f$, where $f(E)$
 consists of all the values of the elements of $E$.
 
 In such a way we can alternatively define a surjective mapping as one where
-$f(A) = B$ (a non-seurjective mapping would only satisfy $f(A) \subset B$.
+$f(A) = B$ (a non-surjective mapping would only satisfy $f(A) \subset B$).
 
 On the other hand, we can fix some subset of the range $B$, and consider the
 elements in $A$ that ``hit'' $B$. To make it precise, if $G \subset B$, then we
@@ -59,11 +58,11 @@ $x\in A$, $f(x)$ is a single value. This is inherent in the definition of a
 function.
 
 In the special case that we do not have more than one element of the domain 
-mapping to the same element of the range, i.e. we have no-one sharing the same
+mapping to the same element of the range, i.e., we have no-one sharing the same
 birthday, then we call this function an injection.
 
 \begin{definition}
-A mapping $f:A\rightarrow B$ is said to be an injection, or an injective
+A mapping $f:A\to B$ is said to be an injection, or an injective
 mapping, if for all $x_1, x_2 \in A$, whenever it is the case that $x_1\neq
 x_2$, we have $f(x_1) \neq f(x_2)$.
 \end{definition}
@@ -76,7 +75,7 @@ Now if we have a mapping that is both surjective and injective, we call such a
 ma pping a bijection, or a bijective mapping
 
 \begin{definition}
-A mapping $f:A\rightarrow B$ is said to be a bijection, or a bijective mapping,
+A mapping $f:A\to B$ is said to be a bijection, or a bijective mapping,
 if it is both a surjection, and an injection.
 \end{definition} 
 
@@ -165,7 +164,7 @@ bejective mappings between each set to $\N$.
 
 \begin{example}
 $\Z = \{\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\}$ is the set of all integers.
-$\Z$ is countable, i.e. $\Z \sim \N$. The bijection $f:\N \rightarrow \Z$ is
+$\Z$ is countable, i.e., $\Z \sim \N$. The bijection $f:\N \to \Z$ is
 given by the following
 \[ 
 f(n) =
@@ -176,7 +175,7 @@ f(n) =
 \]
 We can check that this is indeed a bijection between $\N$ and $\Z$.  To do so
 we show that it is both a surjection and an injection. First, for any natural
-number $y\in \Z$, if $y$ is positive, then we can find the the integer $x = 2y$
+number $y\in \Z$, if $y$ is positive, then we can find the integer $x = 2y$
 which is an even natural number, thus under the mapping,
 \[
 f(x) = f(2y) = \frac{2y}{2} = y
@@ -197,7 +196,7 @@ even, then since $x_1\neq x_2$, we must have $f(x_1) = \frac{x_1}{2}\neq
 have $f(x_1) = -\frac{x_1-1}{2}\neq -\frac{x_2-1}{2} = f(x_2)$. Therefore we
 have established that $f$ is an injection. Since we showed both surjectivity
 and injectivity, $f$ is a bijection. Therefore, by our definition of
-cardinality, $\N$ and $\Z$ have the same cardinality, i.e. they have the same
+cardinality, $\N$ and $\Z$ have the same cardinality, i.e., they have the same
 number of elements.
 
 The cases for finding a bijection between $mathbb{N}$ and the set of even
