@@ -49,9 +49,9 @@ for i in range(len(longest)):
     else:
         section_numbers.append(str(i))
 
-input_template = '''\\subfile{{{filename}}}'''
+input_template = '''\\subfile{{\\relative {filename}}}'''
 
-chapter_head = '''\\chapter{{{chapter}}}\\label{{chap:{label}}}'''
+chapter_head = '''\\chapter{{{chap}}}\\label{{chap:{label}}}'''
 
 chapter_template = [
     '''\\documentclass[../../templates/chapter]{subfiles}''',
@@ -62,7 +62,7 @@ section_template = '''\\documentclass[../../templates/section]{{subfiles}}
 
 \\begin{{document}}
 
-\\section{{{section}}}\label{{sec:{label}}}
+\\section{{{section}}}\\label{{sec:{label}}}
 
 filler content...
 
@@ -74,7 +74,7 @@ for i, (chapter, secs) in enumerate(zip(chapter_dir_names, section_file_names)):
     chapter_name = chapter_names[i]
     inputs = copy.deepcopy(chapter_template)
     inputs.append(chapter_head.format(
-        chapter=chapter_name,
+        chap=chapter_name,
         label=chapter
         )
     )
@@ -85,7 +85,7 @@ for i, (chapter, secs) in enumerate(zip(chapter_dir_names, section_file_names)):
         with open('../' + path + '.tex', 'w+') as f:
             f.write(contents)
 
-        inputs.append(input_template.format(filename=path))
+        inputs.append(input_template.format(filename=numbered))
     inputs.append('''\\end{document}''')
 
     main = os.path.join('../content', chapter, 'main.tex')
@@ -93,12 +93,12 @@ for i, (chapter, secs) in enumerate(zip(chapter_dir_names, section_file_names)):
         f.truncate()
         f.write('\n\n'.join(inputs))
 
-chap_template = '''\\subfile{{{filename}}}'''
-
 content = ''
 
 for name, dirname in zip(chapter_names, chapter_dir_names):
-    content += chap_template.format(filename=os.path.join('content', dirname, 'main'))
+    from_root = os.path.join('content', dirname)
+    content += '\\renewcommand{{\\relative}}{{{}}}\n'.format(from_root + os.sep)
+    content += '\\subfile{{{}}}'.format(os.path.join(from_root, 'main'))
     content += '\n\n'
 
 with open('../content/content.tex', 'w+') as f:
