@@ -4,6 +4,262 @@
 
 \section{Finite, Countable, and Uncountable Sets}\label{sec:finite-countable-and-uncountable-sets}
 
-filler content...
+Armed with a well-constructed real number system, we can begin to talk about
+some mathematical constructions.  One of the simplest constructions
+(operations?) on the real numbers is the object called a function.  A function
+is simply a rule that assigns an input number and outputs a number. 
+
+However, note that the notion of a function is not
+constrained to operations on numbers. It can make as much sense to talk about a 
+function on an arbitrary set, and the ``outputs'' need not even resemble the 
+inputs in any shape or form. For example, one can define a function on the set
+of names of people in a class, which outputs the birthday of the person in
+binary. To make things less confusing, we will usually call this type of 
+``general functions'' between sets a mapping, and reserve the term function for 
+functions in the usual sense on numbers. However, one should keep in mind that
+in mathematics the two terms are often used interchangeably.
+
+In our example, we would call the set of names the domain of the function, and
+the set of all possible dates the range of the function, and we say the
+function maps from the domain to the range. If we denote $f$ as the funciton,
+the domain as the set $A$, the range as the set $B$, then we represent this as
+\[
+f:A\to B
+\]
+Now one might notice that in a typical classroom, it is unlikely that we will
+have all the possivle dates in a year represented among all the students,
+unless this is an unusially large classroom, and we are sufficiently lucky.
+Therefore, not all of the elements of $B$ are ``hit'' by the funciton. If it is
+the case we do ``hit'' all of $B$, then we call such a function a surjection
+(or and onto function). 
+
+\begin{definition}
+A mapping $f:A\to B$ is said to be a surjection, or a surjective
+mapping, if for all $y\in B$, there exists an element $x\in A$, such that
+$f(x) = y$.
+\end{definition}
+
+Sometimes, we are interested in talking about the values of a subset of the
+domain under the mapping. For example, we may only wish to observe the
+birthdays of males in the classroom. In this case, suppose $E \subset A$ is a
+subset of $A$, then we say $f(E)$ is the image of $E$ under $f$, where $f(E)$
+consists of all the values of the elements of $E$.
+
+In such a way we can alternatively define a surjective mapping as one where
+$f(A) = B$ (a non-surjective mapping would only satisfy $f(A) \subset B$).
+
+On the other hand, we can fix some subset of the range $B$, and consider the
+elements in $A$ that ``hit'' $B$. To make it precise, if $G \subset B$, then we
+denote $f^{-1}(E)$, the inverse image of $G$, as the set of all $x\in A$, such
+that $f(x)\in G$. It is entirely possible that multiple people may have the
+same birthday, so given an element $y\in B$, the set $f^{-1}(y)$, that is all
+$x\in A$ that map to $y$ may have multiple elements. However, it is not
+possible for a person to have multiple birthdays; in the same way, for any
+$x\in A$, $f(x)$ is a single value. This is inherent in the definition of a
+function.
+
+In the special case that we do not have more than one element of the domain 
+mapping to the same element of the range, i.e., we have no-one sharing the same
+birthday, then we call this function an injection.
+
+\begin{definition}
+A mapping $f:A\to B$ is said to be an injection, or an injective
+mapping, if for all $x_1, x_2 \in A$, whenever it is the case that $x_1\neq
+x_2$, we have $f(x_1) \neq f(x_2)$.
+\end{definition}
+
+The definition says that, whenever we have distinct $x$'s in the domain, this
+must mean that they map to different $y$'s in the domain. This is exactly what
+we meant by no-body from the classroom having the same birthday.
+
+Now if we have a mapping that is both surjective and injective, we call such a
+ma pping a bijection, or a bijective mapping
+
+\begin{definition}
+A mapping $f:A\to B$ is said to be a bijection, or a bijective mapping,
+if it is both a surjection, and an injection.
+\end{definition} 
+
+Intuitively, a bijection is a mapping that does not miss anything in the range
+(surjective); and assigns each distinct $x$ from the domain, to a distinct and
+unique $f(x)$ (injective). 
+
+The following diagrams illustrate a surjection, injection, and a bijection.
+
+The existence of a bijective mapping between two sets is useful since we are
+assured that the two have the same number of elements.  (you should convince
+yourself why this is the case). In fact, this is exactly how we properly
+compare the number of elements between sets. If we can find a bijective mapping
+between set $A$ and set $B$, then they have the same number of elements; if
+there exist no bijective mapping, then the two must have diff erent number of
+elements. 
+
+In set theoretic terms, two sets have the same cardinality, or the same
+cardinal number, if they have the same number of elements.
+
+\begin{definition}
+If there exists a bijective mapping between sets $A$ and $B$, we say they are 
+equivalent. And we write $A \sim B$.
+\end{definition}
+
+Thus, we have a particular way of comparing two sets. If we are given two sets,
+we can have a well-defined notion of what we mean when we say ``they have the
+same number of elements'', or ``they do not have the same number of elements''.
+A ``comparison'' such as the one described, gives us a ``relation'' between
+sets. $A$ and $B$ are equivalent, if they have the same cardinality
+
+OK THIS PART I HAVENT FIGURED OUT A WAY TO DO IT, IT'S ON EQUIV. RELATIONS
+
+With a well-defined way of comparing the number of elements of a set, we can
+begin to define what it means to have finite, or infinite, number of elements.
+
+Intuitively, if a set were to have a finite number of elements, we ought to be 
+able to count the elements one by one, and finish at some number $n$, which we
+call the ``number of elements that this set has''. 
+
+What exactly are we doing when we ``count'' the elements of a set $A$? We are
+grabbing elements out of $A$, and tagging it with a unique number ($1, 2, 3, 4,
+5, \ldots$), and throwing the ``element-number'' pair into the ``counted''
+bucket. We continue until we run out of elements, and then we take the number
+on the last pair, and call that the cardinality, or the number of elements.
+This ``counting'' operation is precisely a bijective mapping between $A$, and
+the counting numbers, or Natural Numbers, which are $1, 2, 3, 4, 5, 6, 7,
+\ldots$. And when we say set $A$ has cardinality $n$, we mean precisely the
+following:\todo{@kevin, notice that you use quite a bit of quotes in the past
+few paragraphs. perhaps some italicized? also learn how to do quotes in latex}
+\[
+A \sim \{1, 2, 3, 4, 5,\ldots, n\}
+\]
+The existence of such an $n$, that is to say, our counting terminates, is
+exactly the definition of a set being finite.  While the absence of such an $n$
+is exactly the definition of a set being infinite. 
+
+We summarize these defininitions this below. In addition, we hint at the
+existence of sets which are infinite but are not equiavlent to the set of all
+natural numbers. That is to say there are sets which cannot form a bijection
+with some set $\{1, 2, \ldots, n\}$ but also cannot form a bijection with the
+set $\{1, 2, 3, 4, \ldots\}$.  (This might seem like a big surprise, but think
+back to Chapter 1, when we convinced you that the rational numbers is not a
+``big'' enough number system)
+
+\begin{definition}
+For simplicity, we write the set $\{1, 2, 3,\ldots, n\}$ as $J_n$\todo{i really
+dont like this notation. I would prefer $\overline{n}$ or something else}, and
+the set $\{1, 2, 3, 4, \ldots\}$ as $\N$. Then for any set $A$, we say
+\begin{itemize}
+    \item $A$ is finite if $A \sim J_n$ for some $n$ (the empty set is also
+        considered to be finite, even though technically it has zero elements).
+    \item $A$ is infinite if $A$ is not finite.
+    \item $A$ is countable if $A \sim J$
+    \item $A$ is uncountable if $A$ is neither finite nor countable. 
+    \item $A$ is at most countable if $A$ is finite or countable.
+\end{itemize}
+\end{definition}
+
+Now for some examples. In particular, we will show the (possibly) surprising
+result that sets of all integers, the set of only positive integers (which is
+just $\N$), the set of even integers, and the set of odd integers all have the
+same cardinality, the countably infinite kind.  That is to say, they all have
+the same number of numbers in them.  We will do this by explicitly defining
+bejective mappings between each set to $\N$.
+
+\begin{example}
+$\Z = \{\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\}$ is the set of all integers.
+$\Z$ is countable, i.e., $\Z \sim \N$. The bijection $f:\N \to \Z$ is
+given by the following
+\[ 
+f(n) =
+\begin{cases} 
+    \frac{n}{2}      & \text{if} \quad n \quad \text{is even} \\
+    -\frac{n - 1}{2} & \text{if} \quad n \quad \text{is odd}
+\end{cases}
+\]
+We can check that this is indeed a bijection between $\N$ and $\Z$.  To do so
+we show that it is both a surjection and an injection. First, for any natural
+number $y\in \Z$, if $y$ is positive, then we can find the integer $x = 2y$
+which is an even natural number, thus under the mapping,
+\[
+f(x) = f(2y) = \frac{2y}{2} = y
+\]
+If $x$ is not positive (so is 0 or is negative), then we can find the integer
+$y = -2y + 1$, which is an odd natural number, therefore under the mapping,
+\[
+f(x) = f(-2y + 1) = -\frac{-2y + 1 - 1}{2} = -\frac{2y}{2} = y
+\]
+So any integer $y$ in $\Z$, we have found a natural number in $\N$ that is
+mapped by $f$ to $y$, therefore $f$ is surjective.
+
+Now for injectivity. Suppose we take two disitinct natural numbers, $x_1$ and
+$x_2$, $x_1\neq x_2$. If they have different parities, then the mapping $f$
+maps them to different signs, therefore $f(x_1)\neq f(x_2)$. If they are both
+even, then since $x_1\neq x_2$, we must have $f(x_1) = \frac{x_1}{2}\neq
+\frac{x_2}{2} = f(x_2)$. If $x_1$ and $x_2$ are both odd, then similarly we
+have $f(x_1) = -\frac{x_1-1}{2}\neq -\frac{x_2-1}{2} = f(x_2)$. Therefore we
+have established that $f$ is an injection. Since we showed both surjectivity
+and injectivity, $f$ is a bijection. Therefore, by our definition of
+cardinality, $\N$ and $\Z$ have the same cardinality, i.e., they have the same
+number of elements.
+
+The cases for finding a bijection between $mathbb{N}$ and the set of even
+integers, and between $\N$ and odd integers, are left as excercises for you.
+The general appraoch is the same as the case shown just now.
+\end{example} 
+
+\begin{remark}
+Recall that a proper subset of a set $A$ is a subset of $A$ that is not the
+whole of $A$.  It is not possible for a proper subset of a finite set to be
+equivalent (same cardinality) to the set itself. This is intuitively apparent,
+a subset that is not equal to the original set must have less elements.
+However, if the original set is an infinite set, then this is possible. As we
+have just shown, $\N \sim \Z$, but $\N$ is a proper subset of $\Z$.
+\end{remark}
+In fact, using this logic, we can equivalently say that infinite sets are 
+just the sets which we can find a proper subset that is equivalent to the 
+set itself.
+
+Now, the usefulness of having properly-defined notions of mappings, and notions 
+of cardinality, can be first exemplified by talking about sequences of numbers. 
+The definition will appear to be surprisingly barebones. 
+
+\begin{definition}
+A \textbf{sequence} is a function on the set of natural numbers $\mathbb{N}$
+\end{definition}
+
+An example of a sequence might be the function $f:\mathbb{N}\rightarrow \mathbb{R}$, 
+defined by 
+\[
+f(x) = \frac{1}{x}
+\]
+For any $x\in \mathbb{N}$.
+
+Then the values of this sequence are the numbers $1, \frac{1}{2}, \frac{1}{3}, 
+\frac{1}{4}, \dots$. 
+
+Even though sequences of numbers are the ones that we will work with most of 
+the ti
+me, the definition a sequence does not require it to be a sequence of numbers. 
+With this definition, we can talk about a sequence of any arbitrary things. 
+In which 
+case the sequence will be a mapping from $\mathbb{N}$ to an arbitriry set.
+
+Notice that the sequence is the mapping, while the values that we typically think 
+of as the contents of the sequence, are in fact the values of the mapping, 
+these are called  ``terms" of the sequence. We can think of the sequence as being 
+the set of rules that says ``the first term is 1", ``the second term is $\frac{1}
+{2}$", ``the third term is $\frac{1}{3}$, etc. In that way it is clear why the 
+function itself is the one we choose to represent the sequence. Also worth noting 
+is that the terms of a sequence do not have to be 3blue1brownunique, which is to 
+say, the function does not have to be injective. 
+
+Although that is the case, in practice, we often identify a sequence by its terms. 
+For instance, in our example above, we would denote $f(1)$ as $x_1$, $f(2)$ as 
+$x_2$, \dots and $f(n)$ as $x_n$ for any $n$. To denote the whole sequence, 
+i.e. the function it self, we write $(x_n)$.
+
+We can easily construct a sequence from any given countably infnite set, since 
+for any such set, there must exist a bijective mapping between it and $\mathbb{N}$, 
+then there must be a mapping from $\mathbb{N}$ to the set. (either the bijection 
+itself or the inverse mapping of the bijection). We describe this property by 
+saying that the elements of any countably infnite set can be ``arranged in sequence".
 
 \end{document}
