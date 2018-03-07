@@ -4,6 +4,59 @@
 
 \section{Ordered Sets}\label{sec:ordered-sets}
 
-filler content...
+Often when we talk about collections of things (people, cars, dogs, etc.) we
+talk about how they compare to each other (height, top speed, cuteness
+respectively). \emph{But}, we can only do this because we have a way in which
+these objects relate to each other. My dog is \emph{of course} cuter than
+yours, so I might say my dog is better than yours. Symbolically, I might write
+this as
+\begin{equation*}\label{eq:doges}
+    \text{your dog} < \text{my dog}
+\end{equation*}
+where ``$<$'' can be read as ``is less cute than'' in this particular scenario,
+but in others, it might mean ``has a lower top speed'' or really anything else
+you can think of. We could even take all dogs and compare them in lots of
+different ways, such as by weight, or tail length, or number of hairs, or...
+
+There are a lot of ways, but the idea is that with a collection of objects we
+often like to talk about how they relate to each other and how we can compare
+objects of this underlying collection or set. The following definition puts
+this in terms we will use through the rest of the book.
+
+\begin{definition}\label{def:order}
+    If we let $S$ be a set, then an \emph{order} on $S$ is a relation, often
+    denoted $<$, with two extra properties.
+    \begin{itemize}
+        \item If $x$ and $y$ are in $S$, then \emph{only one} of the following
+        is true.
+        \[ x < y, \qquad x = y, \qquad y < x\]
+        \item If $x$, $y$ and $z$ are in $S$ and $x < y$ and $y < z$, then $x <
+        z$.
+    \end{itemize}\todo{change bullets to match with rudin}
+\end{definition}
+
+Note that we did not define what the symbol $>$ means, but as is often done we
+will use it because mathematics is nothing without some abuses of notation. If
+we write $x > y$, take that to mean $y < x$, but instead you may read it as $x$
+is ``greater than'' $y$ or $x$ is ``larger than'' $y$. Along with this
+notation, we will use $x \le y$ to mean that $x$ is either less than $y$ or it
+is equal to $y$, but we don't know which. Similarly with $\ge$.
+
+While in English (and many other languages) we rely on context to understand
+what set and order people are using when they talk, in mathematics we have to
+be very pedantic. Hence the following definition.
+
+\begin{definition}\label{def:ordered-set}
+    An \emph{ordered set} is a set, together with an order defined on said set.
+\end{definition}
+
+Going back to the dogs, people often say ``Nate, you're dog is \emph{the
+cutest}'' which would imply, if taken literally, that there is no dog that is
+cuter than mine. People love these kind of extremes. We have a whole book
+dedicated to people who are the \emph{most} at something (The Guinness World
+Records) and it comes out every year. We also have the Olympics to find more of
+the \emph{most} people. The fastest person on land, the fastest person in
+water, the fastest person on land/water/wheel (triathlon). We love this kind of
+thing, and of course some people are also interested in the slowest.
 
 \end{document}
