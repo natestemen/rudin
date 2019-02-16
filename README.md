@@ -15,13 +15,8 @@ analysis.
 To get the project you must first have [`git`](https://git-scm.com/). You can
 then clone the project via
 ```
-git clone https://github.com/natestemen/rudin.git
-```
-with HTTPS or
-```
 git clone git@github.com:natestemen/rudin.git
 ```
-to use SSH.
 
 To build the full pdf, run
 ```
@@ -35,18 +30,7 @@ not have the `latexmk` command or a LaTeX distribution.
 First and foremost, you will need a LaTeX distribution which can be found for
 your OS [here](https://www.latex-project.org/get/#tex-distributions). With that
 installed you _should_ have the `latexmk` command (which is similar to
-`pdflatex`, but smarter) which I would recommend using to compile the pdf's
-just so you don't have to worry about running `pdflatex` multiple times.
-
-Make sure when you use `latexmk` you pass it the `-pdf` option, otherwise you
-will be left searching for a pdf (as I was).
-
-## Deployment
-
-It would be cool to get it so that when new commits appear in master, the
-newest pdf if rendered on some website. If anyone knows how to do this, perhaps
-we could try. I'll look into it. Probably something we could do with
-[Overleaf](https://www.overleaf.com/).
+`pdflatex`, but smarter) which I would recommend using to compile the pdf's.
 
 ## Contributing
 
@@ -65,7 +49,7 @@ participated in this project.
 
 ## License
 
-This project is licensed under the WTFPL License - see the
+This project is licensed under the GPL License - see the
 [LICENSE.md](https://github.com/natestemen/rudin/blob/master/LICENSE) file for details
 
 ## Acknowledgments
