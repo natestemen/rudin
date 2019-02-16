@@ -8,7 +8,7 @@ pipeline {
     }
     stage('deploy') {
       steps {
-        sh 'cp main.pdf /var/www/natestemen/rudin.pdf'
+        sh 'cp main.pdf /var/www/natestemen.com/rudin.pdf'
       }
     }
   }
