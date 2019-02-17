@@ -8,7 +8,7 @@ pipeline {
     }
     stage('deploy') {
       when {
-        branch: 'master'
+        branch 'master'
       }
       steps {
         sh '''WEB_DIR=/var/www/natestemen.com
