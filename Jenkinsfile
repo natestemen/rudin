@@ -13,7 +13,7 @@ pipeline {
       steps {
         sh '''WEB_DIR=/var/www/natestemen.com
 cp main.pdf $WEB_DIR/main.pdf
-rm rudin.pdf
+rm $WEB_DIR/rudin.pdf
 mv $WEB_DIR/main.pdf $WEB_DIR/rudin.pdf'''
       }
     }
