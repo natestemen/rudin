@@ -5,48 +5,58 @@
 \section{Finite, Countable, and Uncountable Sets}\label{sec:finite-countable-and-uncountable-sets}
 
 Armed with a well-constructed real number system, we can begin to talk about
-some mathematical constructions.  One of the simplest constructions
-(operations?) on the real numbers is the object called a function.  A function
-is simply a rule that assigns an input number and outputs a number. 
+some mathematical constructions. One of the simplest, and some might say most 
+natural, constructions on the real numbers is a function. A function
+is a rule that assigns an input number and outputs a number. 
 
-However, note that the notion of a function is not
-constrained to operations on numbers. It can make as much sense to talk about a 
-function on an arbitrary set, and the ``outputs'' need not even resemble the 
-inputs in any shape or form. For example, one can define a function on the set
-of names of people in a class, which outputs the birthday of the person in
-binary. To make things less confusing, we will usually call this type of 
-``general functions'' between sets a mapping, and reserve the term function for 
-functions in the usual sense on numbers. However, one should keep in mind that
+However, the notion of assigning an output to a given input still makes sense 
+even we do not consrain ourselves to them being numbers. In fact, a 
+function can be defined on an arbitrary set $A$, where ``inputs" are taken from t
+he elements of $A$. While the ``outputs" may be elements of some set $B$. F
+or example, we may define a function on the set
+of names of people in the class. The function outputs the birthday of the person in
+binary. In this case. To make things clear, we will usually, unless other
+wise noted, call the type of 
+``general functions'' between arbitrary sets a \empth{mapping}, and reserve t
+he term \emph{function} for 
+functions in the sense of mappings between sets of real numbers. However, o
+ne should keep in mind that
 in mathematics the two terms are often used interchangeably.
 
-In our example, we would call the set of names the domain of the function, and
-the set of all possible dates the range of the function, and we say the
+In our example, we would call the set of names, the set $A$, the \emph{domai
+n} of the function, and
+the set of all possible dates the \emph{range} of the function, and we say the
 function maps from the domain to the range. If we denote $f$ as the funciton,
 the domain as the set $A$, the range as the set $B$, then we represent this as
 \[
 f:A\to B
 \]
-Now one might notice that in a typical classroom, it is unlikely that we will
+Now one might notice that in a typical class, it is unlikely that we will
 have all the possivle dates in a year represented among all the students,
-unless this is an unusially large classroom, and we are sufficiently lucky.
+unless this is an unusially large class.
 Therefore, not all of the elements of $B$ are ``hit'' by the funciton. If it is
-the case we do ``hit'' all of $B$, then we call such a function a surjection
-(or and onto function). 
+the case we \emph{do} ``hit'' all of $B$, then we call such a function a surjection
+(or an \emph{onto} function). This is made more precise in the following definition:
 
 \begin{definition}
-A mapping $f:A\to B$ is said to be a surjection, or a surjective
-mapping, if for all $y\in B$, there exists an element $x\in A$, such that
+A mapping $f:A\to B$ is said to be a \emph{surjection}, or a \emph{surjective
+mapping}, if for all $y\in B$, there exists an element $x\in A$, such that
 $f(x) = y$.
 \end{definition}
 
-Sometimes, we are interested in talking about the values of a subset of the
-domain under the mapping. For example, we may only wish to observe the
+Sometimes, we are interested in talking about the values of a particular 
+subset of the domain under the mapping. For example, we may only wish to observe the
 birthdays of males in the classroom. In this case, suppose $E \subset A$ is a
-subset of $A$, then we say $f(E)$ is the image of $E$ under $f$, where $f(E)$
-consists of all the values of the elements of $E$.
+subset of $A$, then we say $f(E)$ is the \emph{image of $E$ under $f$}, where $f(E)$
+consists of all the values of the elements of $E$ when mapped by $f$:
+\[
+	f(E) \coloneqq \{y\in B: f(x) \text{ for some }x\in A}\}
 
-In such a way we can alternatively define a surjective mapping as one where
-$f(A) = B$ (a non-surjective mapping would only satisfy $f(A) \subset B$).
+	\]
+
+With this notion we can alternatively define a surjective mapping as one where
+$f(A) = B$ (a non-surjective mapping would only satisfy $f(A) \subset B$). We call $f(A)$ the 
+ \emph{image of the mapping $f$}, or just \emph{image of $f$}.
 
 On the other hand, we can fix some subset of the range $B$, and consider the
 elements in $A$ that ``hit'' $B$. To make it precise, if $G \subset B$, then we
@@ -59,21 +69,25 @@ $x\in A$, $f(x)$ is a single value. This is inherent in the definition of a
 function.
 
 In the special case that we do not have more than one element of the domain 
-mapping to the same element of the range, i.e., we have no-one sharing the same
-birthday, then we call this function an injection.
+mapping to the same element of the range, i.e., we have noone sharing the same
+birthday, then we call this function an \emph{injection}. More precisely:
 
 \begin{definition}
-A mapping $f:A\to B$ is said to be an injection, or an injective
-mapping, if for all $x_1, x_2 \in A$, whenever it is the case that $x_1\neq
+	A mapping $f:A\to B$ is said to be an \emph{injection}, or an \emph{injective
+	mapping}, if for all $x_1, x_2 \in A$, whenever it is the case that $x_1\neq
 x_2$, we have $f(x_1) \neq f(x_2)$.
 \end{definition}
 
 The definition says that, whenever we have distinct $x$'s in the domain, this
 must mean that they map to different $y$'s in the domain. This is exactly what
-we meant by no-body from the classroom having the same birthday.
+we meant by no distinct people from the class have the same birthday. 
+
+The contrapositive of this definition, which is sometimes useful is that a mapping
+is an injection precisely whenever $y\neq y'$, where $y,y'$ are in the image of $f$, we
+ have $f^{-1}(y) \neq f^{-1}(y')$.
 
 Now if we have a mapping that is both surjective and injective, we call such a
-ma pping a bijection, or a bijective mapping
+mapping a \emph{bijection}, or a \emph{bijective mapping}.
 
 \begin{definition}
 A mapping $f:A\to B$ is said to be a bijection, or a bijective mapping,
@@ -82,7 +96,9 @@ if it is both a surjection, and an injection.
 
 Intuitively, a bijection is a mapping that does not miss anything in the range
 (surjective); and assigns each distinct $x$ from the domain, to a distinct and
-unique $f(x)$ (injective). 
+unique $f(x)$ (injective). As such, a bijection is sometimes called a \emph{one-to-one 
+correspondence}.
+
 
 The following diagrams illustrate a surjection, injection, and a bijection.
 
@@ -260,6 +276,5 @@ We can easily construct a sequence from any given countably infnite set, since
 for any such set, there must exist a bijective mapping between it and $\mathbb{N}$, 
 then there must be a mapping from $\mathbb{N}$ to the set. (either the bijection 
 itself or the inverse mapping of the bijection). We describe this property by 
-saying that the elements of any countably infnite set can be ``arranged in sequence".
-
+saying that the elements of any countably infnite set can be ``arranged in sequence".puppy
 \end{document}
