@@ -4,6 +4,161 @@
 
 \section{Ordered Sets}\label{sec:ordered-sets}
 
-filler content...
+Often when we talk about collections of things (people, cars, dogs, etc.) we
+talk about how they compare to each other (height, top speed, cuteness
+respectively). \emph{But}, we can only do this because we have a way in which
+these objects relate to each other. My dog is \emph{of course} cuter than
+yours, so I might say my dog is better than yours. Symbolically, I might write
+this as
+\begin{equation*}\label{eq:doges}
+    \text{your dog} < \text{my dog}
+\end{equation*}
+where ``$<$'' can be read as ``is less cute than'' in this particular scenario,
+but in others, it might mean ``has a lower top speed'' or really anything else
+you can think of. We could even take all dogs and compare them in lots of
+different ways, such as by weight, or tail length, or number of hairs, or\ldots
+
+There are a lot of ways, but the idea is that with a collection of objects we
+often like to talk about how they relate to each other and how we can compare
+objects of this underlying collection or set. The following definition puts
+this in terms we will use through the rest of the book.
+
+\begin{definition}\label{def:order}
+    If we let $S$ be a set, then an \emph{order} on $S$ is a relation, often
+    denoted $<$, with two extra properties.
+    \begin{itemize}
+        \item If $x$ and $y$ are in $S$, then \emph{only one} of the following
+        is true.
+        \[ x < y, \qquad x = y, \qquad y < x\]
+        \item If $x$, $y$ and $z$ are in $S$ and $x < y$ and $y < z$, then $x <
+        z$.
+    \end{itemize}\todo{change bullets to match with rudin}
+\end{definition}
+
+Note that we did not define what the symbol $>$ means, but as is often done we
+will use it because mathematics is nothing without some abuses of notation. If
+we write $x > y$, take that to mean $y < x$, but instead you may read it as $x$
+is ``greater than'' $y$ or $x$ is ``larger than'' $y$. Along with this
+notation, we will use $x \le y$ to mean that $x$ is either less than $y$ or it
+is equal to $y$, but we don't know which. Similarly with $\ge$.
+
+While in English (and many other languages) we rely on context to understand
+what set and order people are using when they talk, in mathematics we have are
+damn pedantic. Hence the following definition.
+
+\begin{definition}\label{def:ordered-set}
+    An \emph{ordered set} is a set, together with an order defined on said set.
+\end{definition}
+
+Going back to the dogs, people often say ``Nate, you're dog is \emph{the
+cutest}'' which would imply, if taken literally, that there is no dog that is
+cuter than mine. People love these kind of extremes. We have a whole book
+dedicated to people who are the \emph{most} at something (The Guinness World
+Records) and it comes out every year. We also have the Olympics to find more of
+the \emph{most} people. The fastest person on land, the fastest person in
+water, the fastest person on land/water/wheel (triathlon). We love this kind of
+thing, and of course some people are also interested in the slowest.
+
+\begin{definition}\label{def:upper-bound}
+    Suppose we have an ordered set $S$, and a subset $E\subset S$. If there
+    exists a $\beta\in S$ such that for every $x\in E$ we have $x\leq\beta$,
+    then we say $E$ is \emph{bounded above}, and call $\beta$ an \emph{upper
+    bound} of $E$.
+\end{definition}
+
+A \emph{lower bound} can be defined in the same way, but with $\geq$ instead of
+$\leq$.
+
+The upper and lower bounds are super helpful when discussing using relative
+terms. However, sometimes we wish to be more even more specific in nailing down
+what we are talking about and how it relates to other upper and lower bounds.
+
+\begin{definition}\label{def:least-upper-bound}
+    Start off with taking $S$ an ordered set, $E\subset S$, and $E$ bounded
+    above. Additionally, there exists an $\alpha\in S$ where
+    \begin{itemize}
+        \item $\alpha$ is an upper bound of $E$.
+        \item If $\gamma < \alpha$ then $\gamma$ is not an upper bound of $E$.
+    \end{itemize}
+    Then $\alpha$ is called the \emph{least upper bound} of $E$. The term
+    \emph{supremum} is also used, and symbolically we write
+    \[\alpha = \sup{E}\]
+\end{definition}
+
+Similarly, we can define the \emph{greatest lower bound} or \emph{infimum} by
+taking $E$ to be a subset of $S$ which is bounded below, and $\gamma > \alpha$
+means $\gamma$ is not a lower bound. This is similarly written as
+\[\alpha = \inf{E}\]
+
+These definitions take the upper/lower bounds we defined in \cref{def:upper-bound} and uses them to build a new concept which captures a
+measure of ``most'' which we discussed earlier. Before continuing onto more
+definitions lets take a look at some examples.
+
+\begin{example}
+    \todo{references section previous section which isn't finished yet}
+\end{example}
+
+In \cref{def:least-upper-bound} we defined a concept 
+
+\begin{definition}\label{def:least-upper-bound-prop}
+    A set $S$ has the \emph{least upper bound property} if
+    \begin{itemize}
+        \item for every subset $E\subset S$, with
+        \item $E\neq\emptyset$, and
+        \item $E$ being bounded above
+    \end{itemize}
+    then $\sup{E}$ exists and is in $S$.
+\end{definition}
+
+Having seen so many definitions in this section that come two-for-one, you might
+guess that we also have definition for \emph{greatest lower bound property}. Do
+you see what we might change in the above definition to create the full
+definition?
+
+The following theorem is vitally important as it really serves as a lesson that
+we see all the time in mathematics; two ideas that seem more or less different,
+are really shown to be not so different after all. Coming across the two
+definitions makes the ideas feel somewhat different, but as we will see, they
+are indeed equivalent.
+
+\begin{theorem}
+    Every set with the least upper bound property, also has the greatest lower
+    bound property, and vice-versa.
+\end{theorem}
+
+\begin{proof}
+    Suppose $S$ has the least upper bound property, and also that there is a
+    non-empty subset $B\subset S$ that is bounded below. Define $L$ to be the
+    collection of all lower bounds of $B$ (everything that is less than all of
+    $B$). Symbolically, $L = \{x\in S \mid \forall b\in B, x\leq b\}$.
+    
+    Since $B$ is bounded below, we know $L$ is not empty, and $L$ is bounded
+    above by all $b\in B$. Since $L\subset S$, and $S$ has the least upper bound
+    property, $L$ has a least upper bound. We write $\alpha = \sup{L}$ to say
+    $\alpha$ is the supremum of $L$.
+
+    Now suppose we have a $\gamma < \alpha$. By \cref{def:least-upper-bound}
+    $\gamma$ cannot be a least upper bound, and since it is less than $\alpha$,
+    it must not be in $B$ ($\gamma\notin B$). If anything less than $\alpha$ is
+    not in $B$, it follows that everything in $B$ must be greater than or equal
+    to $\alpha$. That is for all $b\in B$, $b \geq \alpha$. By our definition of
+    $L$ above, $\alpha\in L$.
+
+    If we take a $\beta > \alpha$, it is not in $L$, since $\alpha$ is an upper
+    bound. We also know $\alpha$ is a lower bound of $B$ since it is in $L$.
+    These two facts together show us that $\alpha$ is the greatest lower bound
+    of $B$, since anything bigger is not a lower bound. Thus the infimum exists
+    in $S$, and in particular $\alpha = \inf{B}$.
+
+    Thus the least upper bound property implies the greatest lower bound
+    property. Proofing the other way round is nearly the same argument with some
+    symbols reversed. Try it out.
+\end{proof}
+
+Orders are used heavily in analysis, and more generally in all sorts of places
+in mathematics. They even have their own field of research called Order Theory.
+It's a pretty crazy place with lots of crazy things going on, and we've only
+just begin touching the surface. If you enjoyed this section, go check out some
+more.
 
 \end{document}
