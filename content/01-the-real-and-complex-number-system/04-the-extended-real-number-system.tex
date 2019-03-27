@@ -2,8 +2,46 @@
 
 \begin{document}
 
-\section{The Extended Real Number System}\label{sec:the-extended-real-number-system}
+\section{The Extended Real Number System}\label{sec:extended-real-number-system}
 
-filler content...
+In this section we are going to talk about a fascinating extension of the real
+number system called the extended real number system. To get this new object, we
+take the existing real numbers $\R$ and add two more objects to it which we will
+denote using $-\infty$ and $+\infty$. You should recognize these symbols and
+immediately realize that we are going to do what a bunch of math teachers have
+told you can \emph{can't} do\footnote{After this, you'll be able to decide if
+that was for better or worse.}. This new object we create is often denoted
+$\overline{\R}$ (the notation we will use), but you may also see $[-\infty, +\infty]$,
+and $\R \cup \{-\infty, +\infty\}$.
+
+To start off we still want this new object to retain the ordering from $\R$.
+Therefore we define
+\begin{equation*}
+    -\infty < x < +\infty
+\end{equation*}
+for all $x\in\R$ which essentially sticks these two objects on opposite sides of
+the number line.
+
+There are a few things that adding these two additional object gets us, but the
+one we really care about is the fact that all sets now have upper bounds (and
+lower bounds). If you take $A$ to be a set of real number which is not bounded
+above in $\R$, then $\sup{A} = +\infty$ in our new number system(This
+is also true with lower bounds, but with $-\infty$).
+
+Now unfortunately $\overline{\R}$ does not form a field\footnote{Can you figure out
+what properties are lacking, or possibly undefined?}, but it is still helpful to have the following
+``conventions'':
+\begin{itemize}
+    \item $x\pm\infty = \pm\infty$ and $\frac{x}{\pm\infty} = 0$
+    \item If $x > 0$ then $x\cdot(\pm\infty) = \pm\infty$
+    \item If $x < 0$ then $x\cdot(\pm\infty) = \mp\infty$ (note the switched sign)
+\end{itemize}
+
+This is an incredibly cool object, and shows one of the great things about
+mathematics which is that you can pretty much do whatever you want. Have the
+reals, but you need an object that's bigger than everything? Just add it and see
+what kind of properties that new thing has. Maybe it gets really boring, but
+maybe not. While there is some lack of rigour in this section, it's still
+insightful and can be formalized to a higher level if needed.
 
 \end{document}
