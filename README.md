@@ -1,3 +1,6 @@
+**We're looking for new contributors!**
+[Kevin](https://kvns.website/) and I are both grad students now and don't have much time to work on this. That said if you come along and write a section or even open a PR for some wording changes, I'll be happy to look it over and most likely merge it. See below for more info.
+
 # Rudin: Translated
 
 Walter Rudin's [_Principles of Mathematical
@@ -10,28 +13,6 @@ a way that more can appreciate. With more intuitive explanations, graphics, and
 anything else we can that aids in learning a notoriously hard subject like
 analysis.
 
-## Getting Started
-
-To get the project you must first have [`git`](https://git-scm.com/). You can
-then clone the project via
-```
-git clone git@github.com:natestemen/rudin.git
-```
-
-To build the full pdf, run
-```
-latexmk -pdf main.tex
-```
-in the root directory of the project. See [below](#prerequisites) if you do
-not have the `latexmk` command or a LaTeX distribution.
-
-### Prerequisites
-
-First and foremost, you will need a LaTeX distribution which can be found for
-your OS [here](https://www.latex-project.org/get/#tex-distributions). With that
-installed you _should_ have the `latexmk` command (which is similar to
-`pdflatex`, but smarter) which I would recommend using to compile the pdf's.
-
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://github.com/natestemen/rudin/blob/master/CONTRIBUTING.md)
@@ -40,8 +21,8 @@ requests.
 
 ## Authors
 
-* **Nate Stemen** - *Initial work* 
-* **Kevin Yeh** - *Initial work*
+* [**Nate Stemen**](https://natestemen.xyz/) - *Initial work* 
+* [**Kevin Yeh**](https://kvns.website/) - *Initial work*
 
 See also the list of
 [contributors](https://github.com/natestemen/rudin/blob/master/AUTHORS) who
