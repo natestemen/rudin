@@ -1,7 +1,3 @@
-\documentclass[../../templates/section]{subfiles}
-
-\begin{document}
-
 \section{Ordered Sets}\label{sec:ordered-sets}
 
 Often when we talk about collections of things (people, cars, dogs, etc.) we
@@ -28,10 +24,10 @@ this in terms we will use through the rest of the book.
     denoted $<$, with two extra properties.
     \begin{itemize}
         \item If $x$ and $y$ are in $S$, then \emph{only one} of the following
-        is true.
-        \[ x < y, \qquad x = y, \qquad y < x\]
+              is true.
+              \[ x < y, \qquad x = y, \qquad y < x\]
         \item If $x$, $y$ and $z$ are in $S$ and $x < y$ and $y < z$, then $x <
-        z$.
+                  z$.
     \end{itemize}\todo{change bullets to match with rudin}
 \end{definition}
 
@@ -51,7 +47,7 @@ damn pedantic. Hence the following definition.
 \end{definition}
 
 Going back to the dogs, people often say ``Nate, you're dog is \emph{the
-cutest}'' which would imply, if taken literally, that there is no dog that is
+    cutest}'' which would imply, if taken literally, that there is no dog that is
 cuter than mine. People love these kind of extremes. We have a whole book
 dedicated to people who are the \emph{most} at something (The Guinness World
 Records) and it comes out every year. We also have the Olympics to find more of
@@ -63,7 +59,7 @@ thing, and of course some people are also interested in the slowest.
     Suppose we have an ordered set $S$, and a subset $E\subset S$. If there
     exists a $\beta\in S$ such that for every $x\in E$ we have $x\leq\beta$,
     then we say $E$ is \emph{bounded above}, and call $\beta$ an \emph{upper
-    bound} of $E$.
+        bound} of $E$.
 \end{definition}
 
 A \emph{lower bound} can be defined in the same way, but with $\geq$ instead of
@@ -98,7 +94,7 @@ definitions lets take a look at some examples.
     \todo{references section previous section which isn't finished yet}
 \end{example}
 
-In \cref{def:least-upper-bound} we defined a concept 
+In \cref{def:least-upper-bound} we defined a concept
 
 \begin{definition}\label{def:least-upper-bound-prop}
     A set $S$ has the \emph{least upper bound property} if
@@ -131,7 +127,7 @@ are indeed equivalent.
     non-empty subset $B\subset S$ that is bounded below. Define $L$ to be the
     collection of all lower bounds of $B$ (everything that is less than all of
     $B$). Symbolically, $L = \{x\in S \mid \forall b\in B, x\leq b\}$.
-    
+
     Since $B$ is bounded below, we know $L$ is not empty, and $L$ is bounded
     above by all $b\in B$. Since $L\subset S$, and $S$ has the least upper bound
     property, $L$ has a least upper bound. We write $\alpha = \sup{L}$ to say
@@ -161,4 +157,3 @@ It's a pretty crazy place with lots of crazy things going on, and we've only
 just begin touching the surface. If you enjoyed this section, go check out some
 more.
 
-\end{document}

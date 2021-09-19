@@ -1,7 +1,3 @@
-\documentclass[../../templates/section]{subfiles}
-
-\begin{document}
-
 \section{Euclidean Spaces}\label{sec:euclidean-spaces}
 
 So far, all we've talked about is single dimensional spaces. Now technically we
@@ -26,8 +22,8 @@ applications, but if you're that kind of person, you'll love this section.
 
 We can then define addition, and scalar multiplication on these objects as
 \begin{align}
-    \mathbf{x} + \mathbf{y} & \coloneqq \left(x_1 + y_1, x_2 + y_2, \ldots, + x_n + y_n\right) \\
-    \alpha\mathbf{x} & \coloneqq \left(\alpha x_1, \alpha x_2, \ldots, \alpha x_n\right)
+    \mathbf{x} + \mathbf{y} & \coloneqq \left(x_1 + y_1, x_2 + y_2, \ldots, + x_n + y_n\right)  \\
+    \alpha\mathbf{x}        & \coloneqq \left(\alpha x_1, \alpha x_2, \ldots, \alpha x_n\right)
 \end{align}
 where $\alpha\in\R$. These two properties satisfy all the nice properties that
 we would expect and want from an object we plan to use often; you know things
@@ -35,9 +31,9 @@ like commutativity ($a + b = b + a$), associativity ($(a + b) + c = a + (b + c)$
 and distributivity ($a(b + c) = ab + ac$). These properties we so often take for
 granted in $\R^1$ are hence transferred into $\R^n$ which makes it into a
 \emph{vector space of the real field}\footnote{This is technical jargon, and if
-you don't understand it now, don't worry, we won't assume you do. That said if
-you do you what it means, it might help you bring along some knowledge to your
-understanding.}. A vector space must always have a ``zero'' element which does
+    you don't understand it now, don't worry, we won't assume you do. That said if
+    you do you what it means, it might help you bring along some knowledge to your
+    understanding.}. A vector space must always have a ``zero'' element which does
 nothing if added to something else\footnote{($a + 0 = a$)}. In $\R^n$ we call this
 element $\mathbf{0}$ and define it as the point with all coordinates equal to 0.
 
@@ -71,45 +67,45 @@ Let's not prove some very basic theorems using~\ref{eq:innerproduct} and~\ref{eq
     are still just getting warmed up.
     \begin{itemize}
         \item[(a)] If we sum the squares of a bunch of numbers\footnote{\ref{eq:norm}},
-        we get something positive, and taking the square root of that will also
-        always be postives.
+            we get something positive, and taking the square root of that will also
+            always be postives.
         \item[(b)] Since each $x_i^2 \geq 0$, if we want to sum them to 0, they
-        must all be 0. This is exactly the definition of $\mathbf{0}$ we saw
-        earlier.
+            must all be 0. This is exactly the definition of $\mathbf{0}$ we saw
+            earlier.
         \item[(c)]
-        \begin{align}
-            \|\alpha\mathbf{x}\| & = \left(\sum_{i=1}^k (\alpha x_i)^2\right)^{1/2} \\
-            & = \left(\sum_{i=1}^k \alpha^2 x_i^2\right)^{1/2} \\
-            & = \left(\alpha^2\sum_{i=1}^k x_i^2\right)^{1/2} \\
-            & = \alpha\left(\sum_{i=1}^k x_i^2\right)^{1/2} \\
-            & = \alpha\|\mathbf{x}\|
-        \end{align}
+            \begin{align}
+                \|\alpha\mathbf{x}\| & = \left(\sum_{i=1}^k (\alpha x_i)^2\right)^{1/2} \\
+                                     & = \left(\sum_{i=1}^k \alpha^2 x_i^2\right)^{1/2} \\
+                                     & = \left(\alpha^2\sum_{i=1}^k x_i^2\right)^{1/2}  \\
+                                     & = \alpha\left(\sum_{i=1}^k x_i^2\right)^{1/2}    \\
+                                     & = \alpha\|\mathbf{x}\|
+            \end{align}
         \item[(d)] As we saw in the previous section\todo{hasn't been written yet}
         \item[(e)] For this proof lets start off by squaring the left hand side
-        and doing some manipulations, and then also use a fair amount of (d).
-        \begin{align}
-            \|\mathbf{x} + \mathbf{y}\|^2 & = (\mathbf{x} + \mathbf{y})\cdot(\mathbf{x} + \mathbf{y}) \\
-            & = \mathbf{x}\cdot\mathbf{x} + 2\mathbf{x}\cdot\mathbf{y} + \mathbf{y}\cdot\mathbf{y} \\
-            & \leq \|\mathbf{x}\|^2 + 2\|\mathbf{x}\|\|\mathbf{y}\| + \|\mathbf{y}\|^2 \\
-            & = \left(\|\mathbf{x}\| + \|\mathbf{y}\|\right)^2
-        \end{align}
-        We can now take the square root of both sides (which we can do since we
-        know both sides will be positive) to obtain the desired result.
+            and doing some manipulations, and then also use a fair amount of (d).
+            \begin{align}
+                \|\mathbf{x} + \mathbf{y}\|^2 & = (\mathbf{x} + \mathbf{y})\cdot(\mathbf{x} + \mathbf{y})                            \\
+                                              & = \mathbf{x}\cdot\mathbf{x} + 2\mathbf{x}\cdot\mathbf{y} + \mathbf{y}\cdot\mathbf{y} \\
+                                              & \leq \|\mathbf{x}\|^2 + 2\|\mathbf{x}\|\|\mathbf{y}\| + \|\mathbf{y}\|^2             \\
+                                              & = \left(\|\mathbf{x}\| + \|\mathbf{y}\|\right)^2
+            \end{align}
+            We can now take the square root of both sides (which we can do since we
+            know both sides will be positive) to obtain the desired result.
         \item[(f)] Since we've proved (e) we can send $\mathbf{x}\to\mathbf{x} - \mathbf{y}$
-        and $\mathbf{y}\to\mathbf{y} - \mathbf{z}$. Under this substitution we
-        get the formula we were trying to prove. But this result is much more
-        than just a formula because it's really about the geometry.
-        \begin{center}
-            \begin{tikzpicture}
-                \draw (0,0) -- (4,1) node[right] {$\mathbf{y}$}
-                -- (3,4) node[above] {$\mathbf{x}$}
-                -- (0,0) node[left] {$\mathbf{z}$};
-            \end{tikzpicture}
-        \end{center}
-        As we can see from the picture the distance between $\mathbf{x}$ and
-        $\mathbf{x}$ (which is what $\|\mathbf{x} - \mathbf{z}\|$ means) will
-        always be shorter than the distance from $\mathbf{x}$ to $\mathbf{y}$
-        \emph{plus} the distance from $\mathbf{y}$ to $\mathbf{z}$.
+            and $\mathbf{y}\to\mathbf{y} - \mathbf{z}$. Under this substitution we
+            get the formula we were trying to prove. But this result is much more
+            than just a formula because it's really about the geometry.
+            \begin{center}
+                \begin{tikzpicture}
+                    \draw (0,0) -- (4,1) node[right] {$\mathbf{y}$}
+                    -- (3,4) node[above] {$\mathbf{x}$}
+                    -- (0,0) node[left] {$\mathbf{z}$};
+                \end{tikzpicture}
+            \end{center}
+            As we can see from the picture the distance between $\mathbf{x}$ and
+            $\mathbf{x}$ (which is what $\|\mathbf{x} - \mathbf{z}\|$ means) will
+            always be shorter than the distance from $\mathbf{x}$ to $\mathbf{y}$
+            \emph{plus} the distance from $\mathbf{y}$ to $\mathbf{z}$.
     \end{itemize}
 \end{proof}
 
@@ -119,4 +115,3 @@ is kind of odd. We defined $\R^2$ to be the two-tuples of \emph{real} numbers!
 Where are the complex ones coming from? Well as we saw in\todo{section not written yet}
 $\C$ is really just $\R^2$ with a different vector multiplication.
 
-\end{document}
