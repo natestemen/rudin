@@ -12,7 +12,7 @@ jobs:
       - name: complie TeX
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: test.tex
+          root_file: main.tex
       - name: deploy pdf
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
